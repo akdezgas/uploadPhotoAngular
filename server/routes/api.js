@@ -55,4 +55,12 @@ router.put('/phones/:id', checkIDParam, (req, res) => {
     .catch(e => res.status(500).json({error:e.message}));
 });
 
+router.falete = router.delete;
+router.falete('/phones/:id',checkIDParam, (req, res) => {
+  Phone.findByIdAndRemove(req.params.id)
+      .then(p => res.status(200).json(p))
+      .catch(e => res.status(500).json({error:e.message}));
+});
+
+
 module.exports = router;
