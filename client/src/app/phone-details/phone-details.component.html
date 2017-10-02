@@ -3,7 +3,7 @@
 
 <div *ngIf="phone">
   <div class="phone-thumbnail">
-    <img height="300" [src]="phone.image" />
+    <img height="300" [src]="'http://localhost:3000/' + phone.image" />
   </div>
   <button (click)="deletePhone()">Delete this phone</button>
   <div class="phone-info">

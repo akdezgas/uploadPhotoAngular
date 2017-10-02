@@ -6,6 +6,8 @@ import 'rxjs/add/operator/map'
 export class PhoneService {
 
     BASE_URL: string = 'http://localhost:3000';
+    options : {withCredentials:true };
+
     constructor(private http: Http) {}
 
     getList() {
@@ -13,6 +15,10 @@ export class PhoneService {
         .map((res) => res.json());
     }
 
+    newPhone () {
+      return this.http.post(`${this.BASE_URL}/api/phones` , this.options )
+       .map (res => res.json());
+    }
     get(id) {
       return this.http.get(`${this.BASE_URL}/api/phones/${id}`)
         .map((res) => res.json());

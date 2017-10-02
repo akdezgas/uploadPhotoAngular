@@ -12,7 +12,11 @@ const api = require('./routes/api');
 
 const app = express();
 
-app.use(cors());
+var corsOptions = {
+    origin: true,
+    credentials: true
+};
+app.use(cors(corsOptions));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

@@ -10,15 +10,21 @@ import {HttpModule} from '@angular/http';
 import {routes} from './routes';
 import {PhoneService} from './services/phone.service';
 
+import { FileUploadModule } from "ng2-file-upload";
+
+import { AddPhoneComponent } from './add-phone/add-phone.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     PhoneListComponent,
-    PhoneDetailsComponent
+    PhoneDetailsComponent,
+    AddPhoneComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    FileUploadModule,
     HttpModule,
     RouterModule.forRoot(routes)
   ],
