@@ -1,7 +1,7 @@
 <h1> Phone list </h1>
 <div>
   <div *ngFor="let phone of phones | async" class="phone">
-    <img [src]="phone.image" height=100/>
+    <img [src]="'http://localhost:3000/'+phone.image" height=100/>
     <h3> {{ phone.name }} </h3>
     <p> {{ phone.brand }} </p>
     <a [routerLink]="['phone', phone._id]"> View Details </a>
